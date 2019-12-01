@@ -32,8 +32,12 @@ export default {
   padding: 20px;
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .item__image {
-  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
 }
 </style>

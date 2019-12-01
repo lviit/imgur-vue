@@ -1,12 +1,14 @@
 <template>
   <div class="details" @click="actions.selectImage('')">
     <div class="details__container">
-      <h3 class="details__title">{{ item.title }}</h3>
-      <span>{{ item.description }}</span>
-      <span>{{ item.ups }}</span>
-      <span>{{ item.downs }}</span>
-      <span>{{ item.score }}</span>
       <img class="details__image" :src="image" />
+      <div class="details__info">
+        <h3 class="details__title">{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+        <p>up votes: {{ item.ups }}</p>
+        <p>down votes: {{ item.downs }}</p>
+        <p>score: {{ item.score }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -32,15 +34,23 @@ export default {
   left: 0;
   right: 0;
   z-index: 1;
-  background-color: rgba(0,0,0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 }
 .details__container {
-  flex: 0 1 400px;
+  flex: 0 0 800px;
   padding: 20px;
   background-color: white;
+  display: flex;
+}
+.details__image {
+  margin-right: 20px;
+  width: 400px;
+}
+.details__info {
+  flex: 0 0 50%;
 }
 </style>
