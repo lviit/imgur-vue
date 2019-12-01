@@ -1,18 +1,23 @@
 <template>
   <div>
     <template v-for="image in state.images">
-      <div v-bind:key="image.id">{{ image.title }}</div>
+      <Item :key="image.id" :item="image" />
     </template>
-    <h1>{{ title }}</h1>
+    <h1>Vue imgur</h1>
   </div>
 </template>
 
 <script>
+import Item from "./Item.vue";
+
 export default {
   props: ["actions", "state"],
   mounted() {
-    console.log(this.actions);
     this.actions.getImages();
+  },
+
+  components: {
+    Item,
   }
 };
 </script>
