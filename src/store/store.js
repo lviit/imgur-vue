@@ -4,7 +4,10 @@ import thunk from "redux-thunk";
 
 const initialState = {
   images: [],
-  counterValue: 0,
+  section: "hot",
+  sort: "viral",
+  window: "day",
+  viral: false
 };
 
 const store = createStore(reducer, initialState, applyMiddleware(thunk));
