@@ -1,4 +1,11 @@
-import { GET_IMAGES, SET_SECTION, SET_SORT, SET_WINDOW, TOGGLE_VIRAL } from "./actionTypes";
+import {
+  GET_IMAGES,
+  SET_SECTION,
+  SET_SORT,
+  SET_WINDOW,
+  TOGGLE_VIRAL,
+  SELECT_IMAGE
+} from "./actionTypes";
 
 export function setSection(section) {
   return { type: SET_SECTION, data: section };
@@ -14,6 +21,10 @@ export function setWindow(window) {
 
 export function toggleViral() {
   return { type: TOGGLE_VIRAL };
+}
+
+export function selectImage(id) {
+  return { type: SELECT_IMAGE, data: id };
 }
 
 export function getImages() {

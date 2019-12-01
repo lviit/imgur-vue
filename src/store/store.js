@@ -7,7 +7,8 @@ const initialState = {
   section: "hot",
   sort: "viral",
   window: "day",
-  viral: false
+  viral: false,
+  selectedImage: ""
 };
 
 const store = createStore(reducer, initialState, applyMiddleware(thunk));

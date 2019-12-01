@@ -1,4 +1,11 @@
-import { GET_IMAGES, SET_SECTION, SET_SORT, SET_WINDOW, TOGGLE_VIRAL } from "./actionTypes";
+import {
+  GET_IMAGES,
+  SET_SECTION,
+  SET_SORT,
+  SET_WINDOW,
+  TOGGLE_VIRAL,
+  SELECT_IMAGE
+} from "./actionTypes";
 
 export function reducer(state, action) {
   console.log(action);
@@ -13,6 +20,8 @@ export function reducer(state, action) {
       return { ...state, window: action.data };
     case TOGGLE_VIRAL:
       return { ...state, viral: !state.viral };
+    case SELECT_IMAGE:
+        return { ...state, selectedImage: action.data };
     default:
       return state;
   }

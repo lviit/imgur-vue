@@ -1,6 +1,9 @@
 <template>
   <div>
     <h1>Vue imgur</h1>
+    <div>
+      <ItemDetails v-if="selectedImage" :item="selectedImage" :actions="actions" />
+    </div>
     <select v-model="section">
       <option :key="option" v-for="option in sectionOptions">{{ option }}</option>
     </select>
@@ -12,13 +15,14 @@
     </select>
     <input type="checkbox" v-model="viral" />
     <div class="container">
-      <Item :key="image.id" :item="image" v-for="image in state.images" />
+      <Item :key="image.id" :item="image" :actions="actions" v-for="image in state.images" />
     </div>
   </div>
 </template>
 
 <script>
 import Item from "./Item.vue";
+import ItemDetails from "./ItemDetails.vue";
 
 export default {
   props: ["actions", "state"],
@@ -36,6 +40,12 @@ export default {
       window,
       viral
     };
+  },
+  computed: {
+    selectedImage() {
+      const { selectedImage, images } = this.state;
+      return selectedImage ? images.find(({ id }) => id === selectedImage) : null;
+    }
   },
   watch: {
     section(section) {
@@ -62,7 +72,8 @@ export default {
     }
   },
   components: {
-    Item
+    Item,
+    ItemDetails
   }
 };
 </script>
