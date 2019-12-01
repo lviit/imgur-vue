@@ -1,6 +1,7 @@
 import { GET_IMAGES, SET_SECTION, SET_SORT, SET_WINDOW, TOGGLE_VIRAL } from "./actionTypes";
 
 export function reducer(state, action) {
+  console.log(action);
   switch (action.type) {
     case GET_IMAGES:
       return { ...state, images: action.data };

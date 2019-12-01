@@ -1,25 +1,19 @@
 <template>
   <div>
+    <h1>Vue imgur</h1>
     <select v-model="section">
-      <template v-for="option in sectionOptions">
-        <option :key="option">{{ option }}</option>
-      </template>
+      <option :key="option" v-for="option in sectionOptions">{{ option }}</option>
     </select>
     <select v-model="sort">
-      <template v-for="option in sortOptions">
-        <option :key="option">{{ option }}</option>
-      </template>
+      <option :key="option" v-for="option in sortOptions">{{ option }}</option>
     </select>
     <select v-model="window">
-      <template v-for="option in windowOptions">
-        <option :key="option">{{ option }}</option>
-      </template>
+      <option :key="option" v-for="option in windowOptions">{{ option }}</option>
     </select>
     <input type="checkbox" v-model="viral" />
-    <template v-for="image in state.images">
-      <Item :key="image.id" :item="image" />
-    </template>
-    <h1>Vue imgur</h1>
+    <div class="container">
+      <Item :key="image.id" :item="image" v-for="image in state.images" />
+    </div>
   </div>
 </template>
 
@@ -72,3 +66,18 @@ export default {
   }
 };
 </script>
+
+<style>
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap");
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-auto-rows: 320px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 20px;
+}
+</style>

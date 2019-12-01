@@ -20,7 +20,7 @@ export function getImages() {
   return async (dispatch, getState) => {
     const { section, sort, window, viral } = getState();
     const clientId = "c9edbdbfc0c2134";
-    const foo = await fetch(
+    const response = await fetch(
       `https://api.imgur.com/3/gallery/${section}/${sort}/${window}?showViral=${viral}`,
       {
         headers: {
@@ -29,7 +29,7 @@ export function getImages() {
         }
       }
     );
-    const { data } = await foo.json();
+    const { data } = await response.json();
     //console.log(data);
     dispatch({ type: GET_IMAGES, data });
   };
