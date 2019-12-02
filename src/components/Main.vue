@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div role="main">
     <h1>Vue imgur</h1>
     <div>
       <ItemDetails v-if="selectedImage" :item="selectedImage" :actions="actions" />
     </div>
     <div><Filters :actions="actions" :state="state" /></div>
-    <div class="grid">
+    <div class="grid" aria-live="polite">
       <Item :key="image.id" :item="image" :actions="actions" v-for="image in state.images" />
     </div>
   </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="item" @click="actions.selectImage(item.id)">
-    <h3 class="item__title">{{ item.title }}</h3>
-    <img class="item__image" :src="image" />
+    <h2 class="item__title">{{ item.title }}</h2>
+    <img class="item__image" :alt="item.title" :src="image" />
   </div>
 </template>
 
@@ -31,7 +31,7 @@ export default {
   bottom: 0;
   padding: 20px;
   color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

@@ -1,26 +1,26 @@
 <template>
   <div class="filters">
     <div class="filter">
-      <label class="filter__label">section</label>
-      <select class="filter__input" v-model="section">
+      <label for="section" class="filter__label">section</label>
+      <select id="section" class="filter__input" v-model="section">
         <option :key="option" v-for="option in sectionOptions">{{ option }}</option>
       </select>
     </div>
     <div class="filter">
-      <label class="filter__label">sort</label>
-      <select class="filter__input" v-model="sort">
+      <label for="sort" class="filter__label">sort</label>
+      <select id="sort" class="filter__input" v-model="sort">
         <option :key="option" v-for="option in sortOptions">{{ option }}</option>
       </select>
     </div>
     <div class="filter">
-      <label class="filter__label">window</label>
-      <select class="filter__input" v-model="window">
+      <label for="window" class="filter__label">window</label>
+      <select id="window" class="filter__input" v-model="window">
         <option :key="option" v-for="option in windowOptions">{{ option }}</option>
       </select>
     </div>
     <div class="filter">
-      <label class="filter__label">viral</label>
-      <input type="checkbox" v-model="viral" />
+      <label for="viral" class="filter__label">viral</label>
+      <input id="viral" type="checkbox" v-model="viral" />
     </div>
   </div>
 </template>

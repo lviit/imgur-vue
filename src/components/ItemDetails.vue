@@ -1,9 +1,9 @@
 <template>
   <div class="details" @click="actions.selectImage('')">
     <div class="details__container">
-      <img class="details__image" :src="image" />
+      <img class="details__image" :alt="item.title" :src="image" />
       <div class="details__info">
-        <h3 class="details__title">{{ item.title }}</h3>
+        <h2 class="details__title">{{ item.title }}</h2>
         <p>{{ item.description }}</p>
         <p>up votes: {{ item.ups }}</p>
         <p>down votes: {{ item.downs }}</p>
