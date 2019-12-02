@@ -32,7 +32,7 @@ export function getImages() {
     const { section, sort, window, viral } = getState();
     const clientId = "c9edbdbfc0c2134";
     const response = await fetch(
-      `https://api.imgur.com/3/gallery/${section}/${sort}/${window}?showViral=${viral}`,
+      `http://localhost:3000/api/3/gallery/${section}/${sort}/${window}?showViral=${viral}`,
       {
         headers: {
           "Content-Type": "application/json",
