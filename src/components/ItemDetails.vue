@@ -41,16 +41,16 @@ export default {
   cursor: pointer;
 }
 .details__container {
-  flex: 0 0 800px;
+  flex: 0 1 800px;
   padding: 20px;
   background-color: white;
   display: flex;
 }
 .details__image {
   margin-right: 20px;
-  width: 400px;
+  max-width: 50%;
 }
 .details__info {
-  flex: 0 0 50%;
+  flex: 1 1 50%;
 }
 </style>
